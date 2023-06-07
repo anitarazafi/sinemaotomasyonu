@@ -30,5 +30,13 @@ namespace SinemaOtomasyon
 
             grd_kisiler.Columns[0].Visible = false;
         }
+
+        private void btn_yenikayit_Click(object sender, EventArgs e)
+        {
+            YeniKayit yeniKayit =  new YeniKayit(this);
+
+            this.Hide();
+            yeniKayit.Show();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.SqlServer.Server;
 
 namespace SinemaOtomasyon
 {
@@ -81,6 +82,39 @@ namespace SinemaOtomasyon
 
 
             return dt;
+        }
+
+        public static void telefonKaydet(string numara, string tur)
+        {
+
+            string sorgu = "SELECT max(id) +1 FROM telefonlar";
+
+            SqlCommand cmd = new SqlCommand(sorgu, SqlConnection);
+
+            int id = (int)cmd.ExecuteScalar();
+
+            sorgu = "INSERT INTO telefonlar (id,numara, tur, aktif) VALUES (@id, @numara, @tur, 1)";
+
+            cmd = new SqlCommand(sorgu, SqlConnection);
+            SqlParameter idParameter = new SqlParameter("@id", System.Data.SqlDbType.Int);
+            idParameter.Value = id;
+            SqlParameter numaraParameter = new SqlParameter("@numara", System.Data.SqlDbType.VarChar);
+            numaraParameter.Value = numara;
+            SqlParameter turParameter = new SqlParameter("@tur", System.Data.SqlDbType.VarChar);
+            turParameter.Value = tur;
+
+            cmd.Parameters.Add(idParameter);
+            cmd.Parameters.Add(numaraParameter);
+            cmd.Parameters.Add(turParameter);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void kisiKaydet()
+        {
+            //@telefon_id @adres_id
+
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grd_kisiler = new System.Windows.Forms.DataGridView();
+            this.btn_yenikayit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_kisiler)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,17 +42,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_kisiler.BackgroundColor = System.Drawing.Color.White;
             this.grd_kisiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grd_kisiler.Location = new System.Drawing.Point(12, 31);
+            this.grd_kisiler.Location = new System.Drawing.Point(12, 78);
             this.grd_kisiler.Name = "grd_kisiler";
             this.grd_kisiler.ReadOnly = true;
-            this.grd_kisiler.Size = new System.Drawing.Size(776, 407);
+            this.grd_kisiler.Size = new System.Drawing.Size(776, 360);
             this.grd_kisiler.TabIndex = 0;
+            // 
+            // btn_yenikayit
+            // 
+            this.btn_yenikayit.Location = new System.Drawing.Point(12, 23);
+            this.btn_yenikayit.Name = "btn_yenikayit";
+            this.btn_yenikayit.Size = new System.Drawing.Size(75, 23);
+            this.btn_yenikayit.TabIndex = 1;
+            this.btn_yenikayit.Text = "Yeni kayit";
+            this.btn_yenikayit.UseVisualStyleBackColor = true;
+            this.btn_yenikayit.Click += new System.EventHandler(this.btn_yenikayit_Click);
             // 
             // AnaPencere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_yenikayit);
             this.Controls.Add(this.grd_kisiler);
             this.Name = "AnaPencere";
             this.Text = "AnaPencere";
@@ -65,5 +77,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grd_kisiler;
+        private System.Windows.Forms.Button btn_yenikayit;
     }
 }
